@@ -1,0 +1,30 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" 
+          controllerName="com.emc.fin.ap.controller.View1">
+    <Page title="View 1">
+        <headerContent>
+            <Button icon="sap-icon://action" press="onNext"></Button>
+        </headerContent>
+        <content>
+            <SearchField id="idSearch" search="onSearch" liveChange="onSearch"></SearchField>
+            <List id="idList" items="{/fruits}" selectionChange="onItemSelect" 
+                mode="SingleSelectMaster" delete="onItemDelete">
+                <headerToolbar>
+                    <Toolbar>
+                        <ToolbarSpacer />
+                        <Button icon="sap-icon://delete" press="onItemsDelete" tooltip="Delete Selected Items"></Button>
+                    </Toolbar>
+                </headerToolbar>
+                <items>
+                    <ObjectListItem intro="{type}" title="{name}" 
+                                    number="{price}" numberUnit="{currency}"
+                                    icon="{imageURL}"
+                    >
+                        <firstStatus>
+                            <ObjectStatus text="{status}" state="{path: 'status', formatter: '.formatter.getStatus'}"></ObjectStatus>
+                        </firstStatus>
+                    </ObjectListItem>
+                </items>
+            </List>
+        </content>
+    </Page>
+</mvc:View>

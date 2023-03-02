@@ -1,0 +1,54 @@
+{
+    "_version": "1.43.0",
+    "sap.app":{
+        "id": "com.emc.fin.ap",
+        "type": "application",
+        "ach": "FIN-AC-AP",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDesciption}}",
+        "i18n": "i18n/i18n.properties"
+    },
+    "sap.ui":{
+        "deviceTypes": {
+            "desktop": true,
+            "phone": true,
+            "tablet":true 
+        },
+        "supportedThemes": ["sap_fiori_3","sap_fiori_3_dark"],
+        "fullWidth": true,
+        "technology": "UI5"
+    },
+    "sap.ui5": {
+        "dependencies": {
+            "minUI5Version": "1.100",
+            "libs": {
+                "sap.ui.core": { "minVersion": "1.99" },
+                "sap.m": {},
+                "sap.ui.layout": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "":{
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "mockdata/fruits.json",
+                "preload": false,
+                "settings": {}
+            },
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "preload": true,
+                "settings": {
+                    "bundleUrl": "i18n/i18n.properties"
+                }
+            }
+        }
+        
+    }
+}
